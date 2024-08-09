@@ -1,12 +1,14 @@
+import { CarForm } from '@/components/CarForm/AddCar';
 import NavBar from '@/components/NavBar/NavBar';
 import { NextPage } from 'next';
 
-const AddCarPage: NextPage = () => {
+const AddPage: NextPage = () => {
   return (
-    <>
-      <NavBar/>
-    </>
+    <div>
+      <NavBar />
+      <CarForm />
+    </div>
   );
 };
 
-export default AddCarPage;
+export default AddPage;

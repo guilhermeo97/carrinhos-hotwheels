@@ -2,32 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+/* Estilos globais */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-gray-100;
+  @apply text-gray-600;
+  @apply font-sans;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Estilos de cabeçalho */
+header {
+  @apply bg-white;
+  @apply py-4;
+  @apply shadow-md;
+}
+
+li{
+  list-style:none;
+}
+
+header nav {
+  @apply container;
+  @apply mx-auto;
+  @apply flex;
+  @apply justify-start;
+  @apply items-center;
+  @apply gap-3;
+}
+
+header nav a {
+  @apply text-lg;
+  @apply font-bold;
+  @apply text-gray-800;
+  @apply hover:text-gray-900;
+}
+
+/* Estilos de conteúdo */
+main {
+  @apply container;
+  @apply mx-auto;
+  @apply p-4;
+  @apply mt-4;
+}
+
+main section {
+  @apply bg-white;
+  @apply p-4;
+  @apply shadow-md;
+  @apply mb-4;
+}
+
+main section h2 {
+  @apply text-lg;
+  @apply font-bold;
+  @apply text-gray-800;
+  @apply mb-2;
+}
+
+main section p {
+  @apply text-gray-600;
+  @apply mb-4;
+}
+
+/* Estilos de rodapé */
+footer {
+  @apply bg-gray-200;
+  @apply py-4;
+  @apply text-center;
+}
+
+footer p {
+  @apply text-gray-600;
+  @apply text-sm;
 }
