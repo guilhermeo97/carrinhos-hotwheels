@@ -6,10 +6,11 @@ export const InputsNewCar = (props: UseControllerProps<Car>) => {
 
     return (
         <div>
-            <input className={`border ${fieldState.invalid ? 'border-red': 'border-white'} p-3`}
+            <input className={`input-text border ${fieldState.invalid ? 'border-red': 'border-white'} p-3`}
                 {...field}
                 placeholder={props.name}
             />
+            {fieldState.error && <div>{fieldState.error.message}</div>}
         </div>
     )
 }

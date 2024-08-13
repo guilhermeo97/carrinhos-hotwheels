@@ -24,14 +24,17 @@ export const CarForm = () => {
 
     return(
         <>
+            <div className="divs">
+                <h2>Cadastrar novo carro</h2>
+            </div>
             <form onSubmit={handleSubmit(handleFormSubmit)}>
-                <InputsNewCar control={control} name='name' rules={{required: 'Campo obrigatório'}} />
-                <InputsNewCar control={control} name='brand' rules={{required: 'Campo obrigatório'}} />
+                <InputsNewCar control={control} name='name' rules={{required: 'Campo obrigatório', minLength: {value: 3, message: "No mínimo 3 letras"}}} />
+                <InputsNewCar control={control} name='brand' rules={{required: 'Campo obrigatório', minLength: {value: 3, message: "No mínimo 3 letras"}}} />
                 <InputsNewCar control={control} name='color' rules={{required: 'Campo obrigatório'}} />
-                <InputsNewCar control={control} name='year' rules={{required: 'Campo obrigatório'}} />
+                <InputsNewCar control={control} name='year' rules={{required: 'Campo obrigatório', min: {value: 1900, message: "Ano mínimo de fabricação: 1900"}, max: {value: 2024, message: "Ano máximo de fabricação: 2024"}}} />
                 <input type="file" name='file' />
 
-                <button type="submit" value="Enviar">Enviar</button>
+                <button className="btn-submit" type="submit" value="Enviar">Enviar</button>
             </form>
             
         </>

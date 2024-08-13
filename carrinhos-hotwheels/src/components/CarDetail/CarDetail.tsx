@@ -14,12 +14,12 @@ export const CarDetail = ({ params }: Props) => {
     return(
         <>
             {filtrar.map((car) => (
-                <div key={car.id}>
-                    <p>{car.id}</p>
-                    <p>{car.name}</p>
-                    <p>{car.brand}</p>
-                    <p>{car.color}</p>
-                    <p>{car.year}</p>
+                <div className="p-3 my-2 bg-white container mx-auto" key={car.id}>
+                    <p><strong>Id: </strong> {car.id}</p>
+                    <p><strong>Nome: </strong> {car.name}</p>
+                    <p><strong>Marca: </strong> {car.brand}</p>
+                    <p><strong>Cor: </strong> {car.color}</p>
+                    <p><strong>Ano: </strong> {car.year}</p>
                 </div>
             ))}   
         </>

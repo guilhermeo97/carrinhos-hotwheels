@@ -18,7 +18,10 @@ const Page = ({ params }: Props) => {
         <>
             <NavBar/>
             <CarDetail params={params}/>
-            <Link href={'/cars/add'}>Adicionar carro</Link>
+            <div className="divs">
+                <Link className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" href={'/cars/add'}>Adicionar carro</Link>
+            </div>
+                
         </>
     )
 }

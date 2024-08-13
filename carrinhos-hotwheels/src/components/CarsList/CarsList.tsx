@@ -16,7 +16,7 @@ interface CarTableProps {
 export const CarsList: React.FC<CarTableProps> = ({ cars }) => {
     
   return (
-        <div className='container'>
+        <div>
         <table>
           <thead>
             <tr>

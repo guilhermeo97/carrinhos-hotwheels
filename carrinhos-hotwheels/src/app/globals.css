@@ -36,6 +36,82 @@ header nav a {
   @apply hover:text-gray-900;
 }
 
+form{
+  @apply container;
+  @apply mx-auto;
+  @apply my-2;
+  @apply flex;
+  @apply justify-start;
+  @apply items-center;
+  @apply gap-3;
+  @apply p-3;
+  @apply flex-col;
+  @apply bg-white;
+  @apply w-full max-w-lg mx-auto mt-10;
+
+}
+
+.divs{
+  @apply p-3 my-2 bg-white container mx-auto
+}
+
+.btn-submit {
+  @apply bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded;
+}
+
+.input-text {
+  @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-500;
+}
+
+table {
+  @apply p-3;
+  @apply container;
+  @apply mx-auto;
+  @apply my-2;
+  /* @apply w-full; */
+  @apply border-collapse;
+}
+
+h2 {
+  @apply text-2xl;
+  @apply font-bold;
+  @apply text-gray-800;
+  @apply mb-2;
+}
+
+p {
+  @apply text-lg;
+  @apply text-gray-600;
+  @apply mb-4;
+}
+
+th {
+  @apply bg-gray-200;
+  @apply text-gray-800;
+  @apply font-bold;
+  @apply py-2;
+  @apply px-4;
+  @apply border-b-2;
+  @apply border-gray-300;
+}
+
+td {
+  @apply py-2;
+  @apply px-4;
+  @apply border-b;
+  @apply border-gray-200;
+  @apply text-center;
+}
+
+tr:hover {
+  @apply bg-gray-100;
+}
+
+tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+
+
 /* Estilos de conteúdo */
 main {
   @apply container;
