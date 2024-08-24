@@ -4,6 +4,7 @@ import { cars } from '@/data/Cars';
 import { Car } from '@/types/Car';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { InputsNewCar } from './InputNewCar';
+import axios from 'axios';
 
 export const CarForm = () => {
     const { handleSubmit, control } = useForm<Car>({
@@ -16,10 +17,16 @@ export const CarForm = () => {
         mode: "onChange",
       })
     
-    const handleFormSubmit: SubmitHandler<Car> = (data) => {
-        data.id = cars.length + 1;
-        cars.push(data);
-        console.log(data)
+    const handleFormSubmit: SubmitHandler<Car> = async (data) => {
+        const response = await axios.post('http://localhost:5000/cars/',{
+            name: data.name,
+            brand: data.brand, 
+            color: data.color,
+            year: data.year
+        })
+        if(response.data){
+            console.log(response.data)
+        }
     }
 
     return(

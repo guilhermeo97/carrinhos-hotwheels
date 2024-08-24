@@ -1,5 +1,8 @@
-import React from 'react';
+"use client"
+
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link'
+import axios from 'axios';
 
 interface Car {
   id: number;
@@ -13,11 +16,22 @@ interface CarTableProps {
     cars: Car[];
 }
 
-export const CarsList: React.FC<CarTableProps> = ({ cars }) => {
-    
+export const CarsList: React.FC<CarTableProps> = () => {
+  const [cars, setCars] = useState<Car[]>([]);
+  useEffect(() => {
+    axios.get('http://localhost:5000/cars')
+    .then((response) => {
+        setCars(response.data)
+    })
+  }, [])
+  
   return (
+        
         <div>
-        <table>
+          {cars.length <= 0 && "Carregando..."}
+          {cars.length > 0 && 
+          
+          <table>
           <thead>
             <tr>
               <th>ID</th>
@@ -35,7 +49,9 @@ export const CarsList: React.FC<CarTableProps> = ({ cars }) => {
             ))}
           </tbody>
         </table>
+        }
         </div>
+          
       );
 };
   
